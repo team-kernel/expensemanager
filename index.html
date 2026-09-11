@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Money Manager Privacy Policy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #FDF7F8;
+    --surface: #FFFFFF;
+    --surface-soft: #FBF0F2;
+    --border: #EAD9DE;
+    --text: #241A1E;
+    --text-soft: #715F65;
+    --accent: #BD5579;
+    --accent-strong: #8C3A57;
+    --accent-tint: #F6E1E8;
+    --good: #3F7A5C;
+    --good-tint: #E4F2EA;
+    --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1B1417;
+      --surface: #241B1F;
+      --surface-soft: #2C2024;
+      --border: #3C2C31;
+      --text: #F3E9EC;
+      --text-soft: #B69AA3;
+      --accent: #E890AC;
+      --accent-strong: #F3B7C9;
+      --accent-tint: #3A2530;
+      --good: #7FC9A3;
+      --good-tint: #223A2E;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #1B1417;
+    --surface: #241B1F;
+    --surface-soft: #2C2024;
+    --border: #3C2C31;
+    --text: #F3E9EC;
+    --text-soft: #B69AA3;
+    --accent: #E890AC;
+    --accent-strong: #F3B7C9;
+    --accent-tint: #3A2530;
+    --good: #7FC9A3;
+    --good-tint: #223A2E;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.masthead {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .app-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: var(--accent);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(189, 85, 121, 0.28);
+  }
+
+  .app-icon svg { width: 28px; height: 28px; }
+
+  .masthead-text .eyebrow {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    margin: 0 0 4px;
+  }
+
+  .masthead-text h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    font-size: 13.5px;
+    color: var(--text-soft);
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .meta-row strong { color: var(--text); font-weight: 600; }
+
+  .summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px 28px 8px;
+    margin-bottom: 40px;
+  }
+
+  .summary-card h2 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin: 0 0 18px;
+  }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 20px;
+  }
+
+  .facts li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 14.5px;
+  }
+
+  .facts .tick {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background: var(--good-tint);
+    color: var(--good);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .facts .tick svg { width: 12px; height: 12px; }
+
+  .facts b { display: block; color: var(--text); }
+  .facts span.detail { color: var(--text-soft); font-size: 13px; }
+
+  section.policy h2 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 40px 0 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  section.policy h2 .num {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--accent-tint);
+    border-radius: 999px;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  section.policy p, section.policy li {
+    font-size: 15.5px;
+    color: var(--text);
+    max-width: 62ch;
+  }
+
+  section.policy ul { padding-left: 20px; margin: 10px 0; }
+  section.policy li { margin-bottom: 6px; }
+
+  section.policy a { color: var(--accent-strong); text-decoration-color: var(--border); }
+  section.policy a:hover { text-decoration-color: var(--accent-strong); }
+
+  .callout {
+    background: var(--surface-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px 10px 10px 4px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 14.5px;
+    color: var(--text-soft);
+  }
+
+  code {
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    background: var(--surface-soft);
+    padding: 1px 6px;
+    border-radius: 5px;
+    font-size: 0.92em;
+    color: var(--accent-strong);
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-soft);
+  }
+
+  @media (max-width: 520px) {
+    .facts { grid-template-columns: 1fr; }
+    .masthead-text h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <div class="app-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 7.5C3 6.12 4.12 5 5.5 5H17a2 2 0 0 1 2 2v1H5.5A2.5 2.5 0 0 1 3 7.5Z" fill="white"/>
+        <path d="M3 9.5V17a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2H5a2 2 0 0 1-2-1.5Z" fill="white"/>
+        <circle cx="16.5" cy="13.5" r="1.5" fill="#BD5579"/>
+      </svg>
+    </div>
+    <div class="masthead-text">
+      <p class="eyebrow">Privacy Policy</p>
+      <h1>Money Manager: Expense Tracker</h1>
+    </div>
+  </header>
+
+  <div class="meta-row">
+    <span>Effective <strong>September 10, 2026</strong></span>
+    <span>Developer <strong>teamkernal</strong></span>
+    <span>Package <strong>com.teamkernal.expensemanager</strong></span>
+  </div>
+
+  <div class="summary-card">
+    <h2>In short</h2>
+    <ul class="facts">
+      <li>
+        <span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><b>Nothing leaves your device</b><span class="detail">All expenses, budgets and categories stay in local storage.</span></span>
+      </li>
+      <li>
+        <span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><b>One narrow network check</b><span class="detail">A small update-required check at startup &mdash; nothing else uses the network.</span></span>
+      </li>
+      <li>
+        <span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><b>No accounts, no ads</b><span class="detail">Nothing to sign in to, no tracking, no advertising.</span></span>
+      </li>
+      <li>
+        <span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><b>You control your data</b><span class="detail">Uninstalling the app permanently deletes everything.</span></span>
+      </li>
+    </ul>
+  </div>
+
+  <section class="policy">
+
+    <h2><span class="num">1</span>Overview</h2>
+    <p>Money Manager: Expense Tracker ("the app") is a personal expense-tracking app. This policy explains, plainly, what happens to your information when you use it. The short version: your financial data never leaves your device, and the only thing the app fetches over the network is a tiny, anonymous check for whether a required update is available.</p>
+
+    <h2><span class="num">2</span>Information we collect</h2>
+    <p>We collect none of your personal or financial information. The app has no user accounts, no analytics SDK, no crash-reporting service, and no advertising network built into it. At startup, the app makes one small network request to a static configuration file to check whether the installed version is still supported; that request carries no personal data, no device identifier, and no expense data &mdash; it is not tied to you in any way, and we do not receive or log it. If that check fails (for example, if you're offline), the app simply continues to work normally.</p>
+
+    <h2><span class="num">3</span>Information you enter</h2>
+    <p>When you use the app, you may enter:</p>
+    <ul>
+      <li>Expense titles, amounts, dates, and categories you create</li>
+      <li>Monthly budget amounts</li>
+      <li>Your choice of light or dark theme</li>
+    </ul>
+    <p>This information is written directly to an SQLite database and local preferences file stored in the app's private storage on your device. It is never transmitted, synced, backed up to a server, or shared with the developer or any third party. We have no way to see it.</p>
+
+    <div class="callout">If your device's own OS-level backup (such as Android's auto-backup to your Google account) is enabled, your device manufacturer or Google may include this local data in that backup, the same as with any other app. That backup is controlled by your device settings, not by this app.</div>
+
+    <h2><span class="num">4</span>Permissions</h2>
+    <p>The app requests the Android <code>INTERNET</code> permission solely to perform the update check described above. It requests no other dangerous or sensitive permissions, and does not access your contacts, location, camera, microphone, storage outside its own sandbox, or any other device data.</p>
+
+    <h2><span class="num">5</span>Third parties</h2>
+    <p>The app does not integrate any third-party analytics, advertising, or data-processing service. The update check reads a static file from a plain file host and sends it no information about you or your device &mdash; there is no data exchange for a third party to receive.</p>
+
+    <h2><span class="num">6</span>Children's privacy</h2>
+    <p>The app does not knowingly collect information from anyone, including children, because it does not collect personal or financial information from anyone at all.</p>
+
+    <h2><span class="num">7</span>Data retention and deletion</h2>
+    <p>Your data lives on your device for as long as the app is installed. You can delete individual expenses or categories within the app at any time. Uninstalling the app removes its local database and preferences entirely and permanently &mdash; there is no cloud copy to remove separately.</p>
+
+    <h2><span class="num">8</span>Changes to this policy</h2>
+    <p>If this app ever changes in a way that involves data leaving your device beyond the update check described above (for example, an optional cloud backup), this policy will be updated first, the "Effective" date above will change, and the change will be described here in plain terms.</p>
+
+    <h2><span class="num">9</span>Contact</h2>
+    <p>Questions about this policy can be sent to <a href="mailto:saad.nokib.claude@gmail.com">saad.nokib.claude@gmail.com</a>.</p>
+
+  </section>
+
+  <footer>
+    Money Manager: Expense Tracker &middot; This page is the privacy policy referenced in the app's Google Play Store listing.
+  </footer>
+
+</div>
+</body>
+</html>
