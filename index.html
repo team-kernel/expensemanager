@@ -260,7 +260,7 @@
   </header>
 
   <div class="meta-row">
-    <span>Effective <strong>September 10, 2026</strong></span>
+    <span>Effective <strong>October 19, 2026</strong></span>
     <span>Developer <strong>teamkernal</strong></span>
     <span>Package <strong>com.teamkernal.expensemanager</strong></span>
   </div>
@@ -274,7 +274,7 @@
       </li>
       <li>
         <span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span><b>One narrow network check</b><span class="detail">A small update-required check at startup &mdash; nothing else uses the network.</span></span>
+        <span><b>One narrow network check</b><span class="detail">A check of the app's own Google Play page for required updates &mdash; nothing else uses the network.</span></span>
       </li>
       <li>
         <span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -290,10 +290,10 @@
   <section class="policy">
 
     <h2><span class="num">1</span>Overview</h2>
-    <p>Money Manager: Expense Tracker ("the app") is a personal expense-tracking app. This policy explains, plainly, what happens to your information when you use it. The short version: your financial data never leaves your device, and the only thing the app fetches over the network is a tiny, anonymous check for whether a required update is available.</p>
+    <p>Money Manager: Expense Tracker ("the app") is a personal expense-tracking app. This policy explains, plainly, what happens to your information when you use it. The short version: your financial data never leaves your device, and the only thing the app fetches over the network is its own public Google Play store page, to check whether a required update is available.</p>
 
     <h2><span class="num">2</span>Information we collect</h2>
-    <p>We collect none of your personal or financial information. The app has no user accounts, no analytics SDK, no crash-reporting service, and no advertising network built into it. At startup, the app makes one small network request to a static configuration file to check whether the installed version is still supported; that request carries no personal data, no device identifier, and no expense data &mdash; it is not tied to you in any way, and we do not receive or log it. If that check fails (for example, if you're offline), the app simply continues to work normally.</p>
+    <p>We collect none of your personal or financial information. The app has no user accounts, no analytics SDK, no crash-reporting service, and no advertising network built into it. When it starts, the app loads its own public listing page on Google Play to check whether the installed version is still supported. The request contains no personal data, no device identifier, and no expense data, and it goes to Google, not to us: we never receive or log it. As with any web page you open, Google receives the technical details every web request carries, such as your IP address, under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. If the check fails (for example, if you're offline), the app simply continues to work normally.</p>
 
     <h2><span class="num">3</span>Information you enter</h2>
     <p>When you use the app, you may enter:</p>
@@ -301,16 +301,19 @@
       <li>Expense titles, amounts, dates, and categories you create</li>
       <li>Monthly budget amounts</li>
       <li>Your choice of light or dark theme</li>
+      <li>Your reminder preferences (on or off, how often, and what time)</li>
     </ul>
     <p>This information is written directly to an SQLite database and local preferences file stored in the app's private storage on your device. It is never transmitted, synced, backed up to a server, or shared with the developer or any third party. We have no way to see it.</p>
 
     <div class="callout">If your device's own OS-level backup (such as Android's auto-backup to your Google account) is enabled, your device manufacturer or Google may include this local data in that backup, the same as with any other app. That backup is controlled by your device settings, not by this app.</div>
 
     <h2><span class="num">4</span>Permissions</h2>
-    <p>The app requests the Android <code>INTERNET</code> permission solely to perform the update check described above. It requests no other dangerous or sensitive permissions, and does not access your contacts, location, camera, microphone, storage outside its own sandbox, or any other device data.</p>
+    <p>The app requests the Android <code>INTERNET</code> permission solely to perform the update check described above.</p>
+    <p>If you turn on expense reminders, the app also asks for permission to show notifications (<code>POST_NOTIFICATIONS</code>), and uses <code>RECEIVE_BOOT_COMPLETED</code> so your reminders still arrive after your phone restarts. Reminders are scheduled entirely on your device by the operating system; they contain only a generic prompt to log your spending, never any of your expense data, and nothing about them is sent anywhere. You can turn reminders off at any time in Settings, or revoke the notification permission in your phone's settings.</p>
+    <p>The app requests no other permissions, and does not access your contacts, location, camera, microphone, storage outside its own sandbox, or any other device data.</p>
 
     <h2><span class="num">5</span>Third parties</h2>
-    <p>The app does not integrate any third-party analytics, advertising, or data-processing service. The update check reads a static file from a plain file host and sends it no information about you or your device &mdash; there is no data exchange for a third party to receive.</p>
+    <p>The app does not integrate any third-party analytics, advertising, or data-processing service. The update check only reads the app's public Google Play page, as described above. It sends no information about you, your device, or your expenses.</p>
 
     <h2><span class="num">6</span>Children's privacy</h2>
     <p>The app does not knowingly collect information from anyone, including children, because it does not collect personal or financial information from anyone at all.</p>
