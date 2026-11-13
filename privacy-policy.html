@@ -260,7 +260,7 @@
   </header>
 
   <div class="meta-row">
-    <span>Effective <strong>October 19, 2026</strong></span>
+    <span>Effective <strong>October 28, 2026</strong></span>
     <span>Developer <strong>teamkernal</strong></span>
     <span>Package <strong>com.teamkernal.expensemanager</strong></span>
   </div>
@@ -274,11 +274,11 @@
       </li>
       <li>
         <span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span><b>One narrow network check</b><span class="detail">A check of the app's own Google Play page for required updates &mdash; nothing else uses the network.</span></span>
+        <span><b>Limited network use</b><span class="detail">An update check, Google Play purchases, and ads only if you choose the ad-supported plan.</span></span>
       </li>
       <li>
         <span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span><b>No accounts, no ads</b><span class="detail">Nothing to sign in to, no tracking, no advertising.</span></span>
+        <span><b>No accounts, no forced ads</b><span class="detail">Nothing to sign in to. Ads appear only when you choose to watch one for Premium.</span></span>
       </li>
       <li>
         <span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -290,10 +290,12 @@
   <section class="policy">
 
     <h2><span class="num">1</span>Overview</h2>
-    <p>Money Manager: Expense Tracker ("the app") is a personal expense-tracking app. This policy explains, plainly, what happens to your information when you use it. The short version: your financial data never leaves your device, and the only thing the app fetches over the network is its own public Google Play store page, to check whether a required update is available.</p>
+    <p>Money Manager: Expense Tracker ("the app") is a personal expense-tracking app. This policy explains, plainly, what happens to your information when you use it. The short version: your financial data never leaves your device unless you save or share a backup or export yourself. The app uses the network only to check Google Play for updates, to process Premium purchases through Google Play, and to show ads to people who choose the ad-supported Premium plan.</p>
 
     <h2><span class="num">2</span>Information we collect</h2>
-    <p>We collect none of your personal or financial information. The app has no user accounts, no analytics SDK, no crash-reporting service, and no advertising network built into it. When it starts, the app loads its own public listing page on Google Play to check whether the installed version is still supported. The request contains no personal data, no device identifier, and no expense data, and it goes to Google, not to us: we never receive or log it. As with any web page you open, Google receives the technical details every web request carries, such as your IP address, under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. If the check fails (for example, if you're offline), the app simply continues to work normally.</p>
+    <p>We collect none of your financial information, and the app has no user accounts, analytics SDK or crash-reporting service. When it starts, the app loads its own public listing page on Google Play to check whether the installed version is still supported. The request contains no personal data, no device identifier, and no expense data, and it goes to Google, not to us: we never receive or log it. As with any web page you open, Google receives the technical details every web request carries, such as your IP address, under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. If the check fails (for example, if you're offline), the app simply continues to work normally.</p>
+    <p><b>Premium purchases.</b> Buying Premium is handled entirely by Google Play. We never see your card or other payment details. As the seller, we receive the order information Google Play provides to developers (such as the order number, date, product and country), under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and the Google Play terms. The app stores only a note on your device that Premium is unlocked, and asks Google Play to confirm it when the app starts.</p>
+    <p><b>Ads (Premium with ads).</b> The app does not show ads to people who have bought Premium, and loads no ads for anyone who never opens the Premium page. If you open the Premium page without having bought Premium, the app loads Google AdMob so a video ad is ready, and shows an ad only when you tap "Watch ad". Google AdMob may collect your device's advertising ID, IP address, and information about the ads shown and how you interact with them, to serve and measure ads and prevent fraud, as described in <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from apps that use its services</a>. Where the law requires it (for example in the EEA and UK), Google's consent form asks for your choice first, and you can change it later from the Premium page. Ads are limited to content suitable for general audiences. None of your expense data is ever shared with AdMob.</p>
 
     <h2><span class="num">3</span>Information you enter</h2>
     <p>When you use the app, you may enter:</p>
@@ -302,27 +304,31 @@
       <li>Monthly budget amounts</li>
       <li>Your choice of light or dark theme</li>
       <li>Your reminder preferences (on or off, how often, and what time)</li>
+      <li>Whether app lock is on</li>
     </ul>
     <p>This information is written directly to an SQLite database and local preferences file stored in the app's private storage on your device. It is never transmitted, synced, backed up to a server, or shared with the developer or any third party. We have no way to see it.</p>
+    <p><b>Backups and CSV exports (Premium).</b> When you back up your data or export it to CSV, the app creates a file and hands it to the place you pick using Android's own save or share screen, such as your phone's storage, Google Drive, or a messaging app. The file then sits wherever you put it, under that service's terms; the app never uploads it anywhere itself. Backup files are not encrypted, so keep them somewhere you trust. Restoring a backup reads only the file you select.</p>
 
     <div class="callout">If your device's own OS-level backup (such as Android's auto-backup to your Google account) is enabled, your device manufacturer or Google may include this local data in that backup, the same as with any other app. That backup is controlled by your device settings, not by this app.</div>
 
     <h2><span class="num">4</span>Permissions</h2>
     <p>The app requests the Android <code>INTERNET</code> permission solely to perform the update check described above.</p>
     <p>If you turn on expense reminders, the app also asks for permission to show notifications (<code>POST_NOTIFICATIONS</code>), and uses <code>RECEIVE_BOOT_COMPLETED</code> so your reminders still arrive after your phone restarts. Reminders are scheduled entirely on your device by the operating system; they contain only a generic prompt to log your spending, never any of your expense data, and nothing about them is sent anywhere. You can turn reminders off at any time in Settings, or revoke the notification permission in your phone's settings.</p>
-    <p>The app requests no other permissions, and does not access your contacts, location, camera, microphone, storage outside its own sandbox, or any other device data.</p>
+    <p>If you turn on app lock (Premium), the app uses <code>USE_BIOMETRIC</code> to ask Android to check your fingerprint, face, or screen-lock PIN/pattern. Android performs the check and tells the app only whether it succeeded; the app never receives or stores your fingerprint, face data, or PIN.</p>
+    <p>The Google Mobile Ads SDK adds the <code>AD_ID</code> permission, which lets AdMob read your device's advertising ID when an ad is loaded, as described above. You can reset or delete your advertising ID in your phone's settings at any time.</p>
+    <p>The app requests no other permissions, and does not access your contacts, location, camera, microphone, or any other device data. Files outside the app are only ever read or written through Android's own file picker, one file you choose at a time.</p>
 
     <h2><span class="num">5</span>Third parties</h2>
-    <p>The app does not integrate any third-party analytics, advertising, or data-processing service. The update check only reads the app's public Google Play page, as described above. It sends no information about you, your device, or your expenses.</p>
+    <p>The app uses two Google services: <b>Google Play</b> (the update check and Premium purchases) and <b>Google AdMob</b> (ads, only for the ad-supported Premium plan), each as described above. It integrates no analytics or other data-processing service, and never sends your expenses, budgets or categories to anyone.</p>
 
     <h2><span class="num">6</span>Children's privacy</h2>
-    <p>The app does not knowingly collect information from anyone, including children, because it does not collect personal or financial information from anyone at all.</p>
+    <p>The app is a general-audience finance tool and is not directed at children. It does not knowingly collect personal information from children. Ads, shown only to people who choose to watch them, are limited to content rated for general audiences.</p>
 
     <h2><span class="num">7</span>Data retention and deletion</h2>
-    <p>Your data lives on your device for as long as the app is installed. You can delete individual expenses or categories within the app at any time. Uninstalling the app removes its local database and preferences entirely and permanently &mdash; there is no cloud copy to remove separately.</p>
+    <p>Your data lives on your device for as long as the app is installed. You can delete individual expenses or categories within the app at any time. Uninstalling the app removes its local database and preferences entirely and permanently &mdash; there is no cloud copy to remove separately. Backup or CSV files you saved yourself stay where you put them until you delete them.</p>
 
     <h2><span class="num">8</span>Changes to this policy</h2>
-    <p>If this app ever changes in a way that involves data leaving your device beyond the update check described above (for example, an optional cloud backup), this policy will be updated first, the "Effective" date above will change, and the change will be described here in plain terms.</p>
+    <p>If this app ever changes in a way that involves data leaving your device beyond what is described above (for example, an automatic cloud backup), this policy will be updated first, the "Effective" date above will change, and the change will be described here in plain terms.</p>
 
     <h2><span class="num">9</span>Contact and support</h2>
     <p>For questions about this policy, help with the app, or any other query, email <a href="mailto:support.teamkernel@gmail.com">support.teamkernel@gmail.com</a>.</p>
